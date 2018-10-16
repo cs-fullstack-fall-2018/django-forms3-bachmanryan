@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'forms_app/bootstrap.css' %}">
+<div class="container">
+    <div class="jumbotron">
+        <a href="{% url 'otheradd' %}" class="top-left-menu"><span class="glyphicon glyphicon-plus"></span> </a>
+        <h1>Best Non-Profit Page</h1>
+        <img src="http://backgroundcheckall.com/wp-content/uploads/2017/12/professional-background-images-for-linkedin-6.jpg">
+    </div>
+        {% for eachItem in form_list %}
+            <li>{{ eachItem.name }} with key:{{eachItem.pk}}
+            <a href="{% url 'otheredit' pk=eachItem.pk %}">Edit</a></li>
+        {% endfor %}
+
+</div>
+
+
+<script src="{% static 'forms_app/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'forms_app/bootstrap.js' %}"></script>
